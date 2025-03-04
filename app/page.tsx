@@ -1,10 +1,14 @@
 import styles from "./page.module.css";
+import {formatSunriseTime, getSunrise} from "@/app/utils/date.util";
 
-export default function Home() {
+export default async function Home() {
+    const sunrise = await getSunrise();
+    const formattedSunrise = formatSunriseTime(sunrise);
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        here we&apos;re going to build the timer
+        Tomorrow&apos;s sunrise in Jackson, WY is at {formattedSunrise}.
       </main>
       <footer className={styles.footer}>
         <a
