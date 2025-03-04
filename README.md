@@ -10,10 +10,10 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 Sunrise timer is powered by SunriseSunset.io which is a free, open source API.
 
-[//]: # (todo find an API to get coordinates of the user)
-[//]: # (todo find an API to get the sunrise time of the user's location)
-[//]: # (todo find a way to implement a countdown timer to the sunrise time)
-[//]: # (todo find a way to implement a map of the user's location)
+#'todo find an API to get coordinates of the user'
+#"todo find an API to get the sunrise time of the user's location"
+#'todo find a way to implement a countdown timer to the sunrise time'
+#"todo find a way to implement a map of the user's location"
 
 ## The Process
 

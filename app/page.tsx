@@ -1,9 +1,9 @@
-import styles from "./page.module.css";
-import {formatSunriseTime, getSunrise} from "@/app/utils/date.util";
+import styles from './page.module.css'
+import { formatSunriseTime, getSunrise } from '@/app/utils/date.util'
 
 export default async function Home() {
-    const sunrise = await getSunrise();
-    const formattedSunrise = formatSunriseTime(sunrise);
+  const sunrise = await getSunrise()
+  const formattedSunrise = formatSunriseTime(sunrise)
 
   return (
     <div className={styles.page}>
@@ -20,5 +20,5 @@ export default async function Home() {
         </a>
       </footer>
     </div>
-  );
+  )
 }
