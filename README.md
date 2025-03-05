@@ -1,10 +1,8 @@
 ## Sunrise Timer
 
-Run the app with `npm i` and `npm run dev` to see the sunrise time and countdown timer for your location :)
+Run the app with `npm i` and `npm run dev` to see the sunrise time and countdown timer for a location, starting with Jackson WY :)
 
 App will be running at [http://localhost:3000](http://localhost:3000) in your browser.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 ## The Stack
 
