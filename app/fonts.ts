@@ -1,10 +1,11 @@
-import { Rubik } from 'next/font/google'
+import { Kablammo } from 'next/font/google'
 
-const rubik = Rubik({
+const copse = Kablammo({
+  weight: '400',
   subsets: ['latin'],
-  variable: '--font-rubik',
+  variable: '--font-copse',
 })
 
 export const fonts = {
-  rubik,
+  copse,
 }

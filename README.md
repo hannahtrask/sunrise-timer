@@ -6,12 +6,23 @@ App will be running at [http://localhost:3000](http://localhost:3000) in your br
 
 ## The Stack
 
+#### API
+
 Sunrise timer is powered by SunriseSunset.io which is a free, open source API.
 
-#'todo find an API to get coordinates of the user'
-#"todo find an API to get the sunrise time of the user's location"
-#'todo find a way to implement a countdown timer to the sunrise time'
-#"todo find a way to implement a map of the user's location"
+#### UI
+
+Chakra UI is used for the UI components.
+Unsplash for the background image.
+
+#### Frontend
+
+Next.js is used for the frontend.
+
+- **todo find an API to get coordinates of the user**
+- **todo find an API to get the sunrise time of the user's location**
+- **todo find a way to implement a countdown timer to the sunrise time**
+- **todo find a way to implement a map of the user's location**
 
 ## The Process
 
@@ -19,7 +30,7 @@ In an effort to use this project as a learning experience, I will be iterating i
 
 ### Jackson Hole, WY
 
-The first iteration of this app will only get the sunrise time for Jackson Hole, WY. This will also include a countdown til sunrise :)
+:white_check_mark: The first iteration of this app will only get the sunrise time for Jackson Hole, WY. This will also include a countdown til sunrise :)
 
 ### Coordinate Lookup
 

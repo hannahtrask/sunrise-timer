@@ -83,8 +83,10 @@ const theme = extendTheme({
   styles: {
     global: {
       'html, body': {
-        background: `linear-gradient(to bottom, ${sunriseColors.sunrisePink}, ${sunriseColors.sunriseOrange})`, // Pink and Orange gradient background
-        color: sunriseColors.sunrisePurple, // Text color contrast
+        backgroundImage: "url('/sapan-patel-i9Q9bc-WgfE-unsplash.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        color: sunriseColors.sunrisePurple,
         fontFamily: "'Roboto', sans-serif",
         lineHeight: '1.6',
         minHeight: '100vh',
@@ -161,7 +163,7 @@ const theme = extendTheme({
     },
     Tag: {
       baseStyle: {
-        colorScheme: sunriseColors.sunrisePurple, // Use your custom color here
+        colorScheme: sunriseColors.sunrisePurple,
       },
     },
     Card: {

@@ -1,14 +1,33 @@
-import styles from './page.module.css'
-import { Countdown } from '@/components/Countdown'
-import { Link } from '@chakra-ui/react'
+import { Countdown } from '@/app/components/Countdown'
+import { Box, Link } from '@chakra-ui/react'
 
 export default async function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
+    <Box
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+      }}
+    >
+      <Box
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 32,
+        }}
+      >
         <Countdown />
-      </main>
-      <footer className={styles.footer}>
+      </Box>
+      <Box
+        style={{
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
         <Link
           href="https://sunrisesunset.io/"
           target="_blank"
@@ -17,7 +36,7 @@ export default async function Home() {
         >
           This app powered by SunriseSunset.io →
         </Link>
-      </footer>
-    </div>
+      </Box>
+    </Box>
   )
 }
