@@ -1,5 +1,6 @@
 import styles from './page.module.css'
 import { formatSunriseTime, getSunrise } from '@/app/utils/date.util'
+import { Countdown } from '@/app/components/Countdown'
 
 export default async function Home() {
   const sunrise = await getSunrise()
@@ -8,6 +9,7 @@ export default async function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <Countdown sunrise={sunrise} />
         Tomorrow&apos;s sunrise in Jackson, WY is at {formattedSunrise}.
       </main>
       <footer className={styles.footer}>

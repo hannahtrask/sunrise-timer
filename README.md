@@ -21,7 +21,7 @@ In an effort to use this project as a learning experience, I will be iterating i
 
 ### Jackson Hole, WY
 
-The first iteration of this app will only get the sunrise time for Jackson Hole, WY.
+The first iteration of this app will only get the sunrise time for Jackson Hole, WY. This will also include a countdown til sunrise :)
 
 ### Coordinate Lookup
 
