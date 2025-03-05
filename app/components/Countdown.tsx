@@ -2,7 +2,15 @@
 
 import { useEffect, useState } from 'react'
 import { formatSunriseTime, getSunrise } from '@/app/utils/date.util'
-import {Box, Card, Heading, HStack, Spinner, Tag, Text} from '@chakra-ui/react'
+import {
+  Box,
+  Card,
+  Heading,
+  HStack,
+  Spinner,
+  Tag,
+  Text,
+} from '@chakra-ui/react'
 
 export const Countdown = () => {
   const [sunriseTime, setSunriseTime] = useState<Date | null>(null)
@@ -43,7 +51,7 @@ export const Countdown = () => {
   }
 
   return (
-    <Card style={{ padding: '5rem' }}>
+    <Card style={{ padding: '5rem', opacity: '0.9' }}>
       <Box style={{ marginBottom: '2rem' }}>
         <Heading as="h2" size="xl">
           Time until sunrise:

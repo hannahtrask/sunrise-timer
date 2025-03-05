@@ -1,11 +1,11 @@
 import { Kablammo } from 'next/font/google'
 
-const copse = Kablammo({
+const kablamo = Kablammo({
   weight: '400',
   subsets: ['latin'],
-  variable: '--font-copse',
+  variable: '--font-kablamo',
 })
 
 export const fonts = {
-  copse,
+  kablamo,
 }
