@@ -1,12 +1,7 @@
 import type { Metadata } from 'next'
-import { Copse } from 'next/font/google'
-import './globals.css'
 import React from 'react'
-
-const copse = Copse({
-  weight: '400',
-  subsets: ['latin'],
-})
+import { Providers } from '@/app/providers/indesx'
+import { fonts } from '@/app/fonts'
 
 export const metadata: Metadata = {
   title: 'Sunrise Timer :)',
@@ -19,8 +14,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${copse.className}`}>{children}</body>
+    <html lang="en" className={fonts.rubik.variable}>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }

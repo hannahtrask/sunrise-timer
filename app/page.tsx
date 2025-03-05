@@ -1,25 +1,22 @@
 import styles from './page.module.css'
-import { formatSunriseTime, getSunrise } from '@/app/utils/date.util'
 import { Countdown } from '@/app/components/Countdown'
+import { Link } from '@chakra-ui/react'
 
 export default async function Home() {
-  const sunrise = await getSunrise()
-  const formattedSunrise = formatSunriseTime(sunrise)
-
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Countdown sunrise={sunrise} />
-        Tomorrow&apos;s sunrise in Jackson, WY is at {formattedSunrise}.
+        <Countdown />
       </main>
       <footer className={styles.footer}>
-        <a
+        <Link
           href="https://sunrisesunset.io/"
           target="_blank"
           rel="noopener noreferrer"
+          style={{ color: '#fff' }}
         >
           This app powered by SunriseSunset.io →
-        </a>
+        </Link>
       </footer>
     </div>
   )
