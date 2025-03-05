@@ -2,16 +2,19 @@
 
 import { useEffect, useState } from 'react'
 import { formatSunriseTime, getSunrise } from '@/app/utils/date.util'
-import { Box, Card, Heading, HStack, Tag, Text } from '@chakra-ui/react'
+import {Box, Card, Heading, HStack, Spinner, Tag, Text} from '@chakra-ui/react'
 
 export const Countdown = () => {
-  const [sunriseTime, setSunriseTime] = useState<Date>(null)
+  const [sunriseTime, setSunriseTime] = useState<Date | null>(null)
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 })
+  const [loading, setLoading] = useState<boolean>(true)
+
   const formattedSunrise = sunriseTime ? formatSunriseTime(sunriseTime) : null
 
   useEffect(() => {
     getSunrise().then((result) => {
       setSunriseTime(new Date(result as string))
+      setLoading(false)
     })
   }, [])
 
@@ -35,6 +38,10 @@ export const Countdown = () => {
     return { hours, minutes, seconds }
   }
 
+  if (loading) {
+    return <Spinner />
+  }
+
   return (
     <Card style={{ padding: '5rem' }}>
       <Box style={{ marginBottom: '2rem' }}>
@@ -42,13 +49,13 @@ export const Countdown = () => {
           Time until sunrise:
         </Heading>
         <HStack spacing={4}>
-          <Tag size="lg" key={timeLeft.hours} variant="solid">
+          <Tag size="lg" key={1} variant="solid">
             {String(timeLeft.hours).padStart(2, '0')} hours{' '}
           </Tag>
-          <Tag size="lg" key={timeLeft.minutes} variant="solid">
+          <Tag size="lg" key={2} variant="solid">
             {String(timeLeft.minutes).padStart(2, '0')} minutes{' '}
           </Tag>
-          <Tag size="lg" key={timeLeft.seconds} variant="solid">
+          <Tag size="lg" key={3} variant="solid">
             {String(timeLeft.seconds).padStart(2, '0')} seconds
           </Tag>
         </HStack>
