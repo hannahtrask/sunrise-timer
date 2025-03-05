@@ -159,6 +159,11 @@ const theme = extendTheme({
         },
       },
     },
+    Tag: {
+      baseStyle: {
+        colorScheme: sunriseColors.sunrisePurple, // Use your custom color here
+      },
+    },
     Card: {
       baseStyle: {
         backgroundColor: sunriseColors.sunrisePeach,
