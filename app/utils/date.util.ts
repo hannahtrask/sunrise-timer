@@ -15,7 +15,7 @@ export const getSunrise = async () => {
  * @param sunrise
  * @returns The formatted sunrise time as XX:XX, TZ
  */
-export const formatSunriseTime = (sunrise: string) => {
+export const formatSunriseTime = (sunrise: Date) => {
   const date = new Date(sunrise)
   const options: Intl.DateTimeFormatOptions = {
     hour: 'numeric',
@@ -37,7 +37,6 @@ export const startSunriseCountdown = (
   sunrise: Date,
   setTimeLeft: React.Dispatch<React.SetStateAction<string>>,
 ) => {
-  console.log('sunrise: ', sunrise)
   const updateCountdown = () => {
     const now = new Date()
     const remainingTime = sunrise.getTime() - now.getTime()

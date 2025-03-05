@@ -1,5 +1,5 @@
 import styles from './page.module.css'
-import { Countdown } from '@/app/components/Countdown'
+import { Countdown } from '@/components/Countdown'
 import { Link } from '@chakra-ui/react'
 
 export default async function Home() {
