@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import React from 'react'
 import { Providers } from '@/app/providers/indesx'
-import { fonts } from '@/app/fonts'
 
 export const metadata: Metadata = {
   title: 'Sunrise Timer :)',
@@ -14,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={fonts.kablamo.variable}>
+    <html lang="en">
       <body>
         <Providers>{children}</Providers>
       </body>

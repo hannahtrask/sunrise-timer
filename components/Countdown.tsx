@@ -53,10 +53,10 @@ export const Countdown = () => {
   return (
     <Card style={{ padding: '5rem', opacity: '0.9' }}>
       <Box style={{ marginBottom: '2rem' }}>
-        <Heading as="h2" size="xl">
+        <Heading as="h2" size="2xl">
           Time until sunrise:
         </Heading>
-        <HStack spacing={4}>
+        <HStack spacing={4} style={{ marginTop: '3rem' }}>
           <Tag size="lg" key={1} variant="solid">
             {String(timeLeft.hours).padStart(2, '0')} hours{' '}
           </Tag>

@@ -1,4 +1,5 @@
 import { extendTheme, ThemeConfig, defineStyleConfig } from '@chakra-ui/react'
+import { fonts } from '@/app/fonts'
 
 const sunriseColors = {
   sunriseYellow: '#FFDD57',
@@ -77,8 +78,8 @@ const theme = extendTheme({
     sunrise: sunriseColors,
   },
   fonts: {
-    heading: "'Poppins', sans-serif",
-    body: "'Roboto', sans-serif",
+    heading: fonts.kablamo.style.fontFamily,
+    body: fonts.notoSans.style.fontFamily,
   },
   styles: {
     global: {
