@@ -11,6 +11,7 @@ To use to coordinate lookup to find the sunrise time for your location, you'll n
 #### API
 
 Sunrise timer is powered by SunriseSunset.io which is a free, open source API.
+OpenWeather API powers location search by zip code.
 
 #### UI
 
@@ -21,9 +22,6 @@ Unsplash for the background image.
 
 Next.js is used for the frontend.
 
-- **todo find an API to get coordinates of the user**
-- **todo find an API to get the sunrise time of the user's location**
-- **todo find a way to implement a countdown timer to the sunrise time**
 - **todo find a way to implement a map of the user's location**
 
 ## The Process
@@ -36,16 +34,16 @@ In an effort to use this project as a learning experience, I will be iterating i
 
 ### Coordinate Lookup
 
-The next iteration will include a feature to get the coordinates of the user's location, which can be used to look up the sunrise time automatically.
+:white_check_mark: The next iteration will include a feature to get the coordinates of the user's location, which can be used to look up the sunrise time for the entered zip code.
 
 ### Sunrise Timer
 
-The final iteration will include a countdown timer to the sunrise time.
+:white_check_mark: The final iteration will include a countdown timer to the sunrise time.
 
 ### Future Iterations
 
 - Improved UI implementations, such as a map of the user's location, and a more detailed countdown timer.
 - Development improvements— I will be looking to improve my development process as I go, including better git practices, more detailed commit messages, and more detailed documentation.
-- Codestyle enforcing will be implemented.
+  ~~- Codestyle enforcing will be implemented.~~
 - Testing— I will be looking to implement testing in the future, including unit tests and integration tests.
-- Deployment— I will be looking to deploy this app to a live server in the future, likely on [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
+- Deployment— I will be looking to deploy this app to a live server in the future, likely on [Vercel](https://vercel.com/)
