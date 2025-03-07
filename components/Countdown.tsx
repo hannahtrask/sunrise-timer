@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { formatSunriseTime, getSunrise } from '@/app/utils/date.util'
 import {
   Box,
   Card,
@@ -12,19 +11,43 @@ import {
   Text,
 } from '@chakra-ui/react'
 
-export const Countdown = () => {
+type CountdownProps = {
+  latitude: number
+  longitude: number
+  placeName: string
+}
+
+export const Countdown = ({
+  latitude,
+  longitude,
+  placeName,
+}: CountdownProps) => {
   const [sunriseTime, setSunriseTime] = useState<Date | null>(null)
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 })
   const [loading, setLoading] = useState<boolean>(true)
-
-  const formattedSunrise = sunriseTime ? formatSunriseTime(sunriseTime) : null
+  const [formattedSunrise, setFormattedSunrise] = useState('')
 
   useEffect(() => {
-    getSunrise().then((result) => {
-      setSunriseTime(new Date(result as string))
-      setLoading(false)
-    })
-  }, [])
+    if (latitude && longitude) {
+      const fetchSunriseTime = async () => {
+        const tomorrow = new Date()
+        tomorrow.setDate(tomorrow.getDate() + 1)
+        const formattedDate = tomorrow.toISOString().split('T')[0]
+
+        const response = await fetch(
+          `https://api.sunrisesunset.io/json?lat=${latitude}&lng=${longitude}&date=${formattedDate}`,
+        )
+        const data = await response.json()
+        const dateStr = data.results.date
+        const timeStr = data.results.sunrise
+        const sunrise = new Date(`${dateStr} ${timeStr}`)
+        setSunriseTime(sunrise)
+        setFormattedSunrise(sunrise.toLocaleTimeString())
+        setLoading(false)
+      }
+      fetchSunriseTime().catch(console.error)
+    }
+  }, [latitude, longitude])
 
   useEffect(() => {
     if (sunriseTime) {
@@ -35,7 +58,7 @@ export const Countdown = () => {
     }
   }, [sunriseTime])
 
-  function getTimeRemaining(targetDate: Date) {
+  const getTimeRemaining = (targetDate: Date) => {
     const now = new Date()
     const difference = targetDate.getTime() - now.getTime()
 
@@ -47,7 +70,11 @@ export const Countdown = () => {
   }
 
   if (loading) {
-    return <Spinner />
+    return (
+      <Box style={{ alignSelf: 'center' }}>
+        <Spinner />
+      </Box>
+    )
   }
 
   return (
@@ -69,7 +96,7 @@ export const Countdown = () => {
         </HStack>
       </Box>
       <Text fontSize="lg">
-        Tomorrow&apos;s sunrise in Jackson, WY is at {formattedSunrise}.
+        Tomorrow&apos;s sunrise in {placeName} is at {formattedSunrise}.
       </Text>
     </Card>
   )

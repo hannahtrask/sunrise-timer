@@ -15,8 +15,11 @@ import { useState } from 'react'
 
 const OPEN_WEATHER_GEOCODE_API_ROUTE = 'http://api.openweathermap.org/geo/1.0/'
 
-// todo pass the gotten coordinates to the countdown when present
-export const Locator = () => {
+type LocatorProps = {
+  onLocationFound: (lat: number, lon: number, name: string) => void
+}
+
+export const Locator = ({ onLocationFound }: LocatorProps) => {
   const [zipCode, setZipCode] = useState('')
   const [location, setLocation] = useState(null)
   const theme = useTheme()
@@ -28,11 +31,11 @@ export const Locator = () => {
     )
     event.preventDefault()
     const response = await fetch(
-      `${OPEN_WEATHER_GEOCODE_API_ROUTE}zip?zip=${zipCode}&appid=${process.env.OPEN_WEATHER_API_KEY}`,
+      `${OPEN_WEATHER_GEOCODE_API_ROUTE}zip?zip=${zipCode}&appid=b2dda56dad052e27f04065db2c1cd201`,
     )
     const data = await response.json()
-    console.log('data: ', data)
     setLocation(data)
+    onLocationFound(data.lat, data.lon, data.name)
   }
 
   return (
