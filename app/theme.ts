@@ -46,7 +46,7 @@ const buttonStyles = defineStyleConfig({
       },
     },
     ghost: {
-      color: sunriseColors.sunrisePurple,
+      color: sunriseColors.sunrisePink,
       _hover: {
         bg: sunriseColors.sunrisePeach,
         color: 'white',
@@ -105,10 +105,13 @@ const theme = extendTheme({
         marginBottom: '1rem',
       },
       h3: {
-        color: sunriseColors.sunriseYellow,
+        color: sunriseColors.sunrisePeach,
         fontSize: 'xl',
         fontWeight: 'semibold',
         marginBottom: '1rem',
+      },
+      h4: {
+        color: sunriseColors.sunrisePurple,
       },
       p: {
         color: sunriseColors.sunrisePurple,
@@ -130,6 +133,7 @@ const theme = extendTheme({
     Input: {
       baseStyle: {
         field: {
+          backgroundColor: sunriseColors.sunriseSky,
           borderColor: sunriseColors.sunrisePink,
           _hover: {
             borderColor: sunriseColors.sunriseOrange,
@@ -193,7 +197,7 @@ const theme = extendTheme({
         },
         h2: {
           fontSize: '2xl',
-          color: sunriseColors.sunrisePink,
+          color: sunriseColors.sunrisePurple,
         },
         h3: {
           fontSize: 'xl',
