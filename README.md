@@ -4,6 +4,10 @@ Run the app with `npm i` and `npm run dev` to see the sunrise time and countdown
 
 App will be running at [http://localhost:3000](http://localhost:3000) in your browser.
 
+To use to coordinate lookup to find the sunrise time for your location, you'll need to get an API key fromm [https://openweathermap.org/api/geocoding-api](https://openweathermap.org/api/geocoding-api) and add it to a `.env.local` file in the root of the project.
+
+```
+
 ## The Stack
 
 #### API

@@ -1,5 +1,6 @@
 import { Countdown } from '@/components/Countdown'
 import { Box, Link } from '@chakra-ui/react'
+import { Locator } from '@/components/Locator'
 
 export default async function Home() {
   return (
@@ -19,6 +20,7 @@ export default async function Home() {
           gap: 32,
         }}
       >
+        <Locator />
         <Countdown />
       </Box>
       <Box
