@@ -5,59 +5,82 @@ import {
   Text,
   Input,
   Button,
+  FormErrorMessage,
+  FormLabel,
+  FormControl,
   useTheme,
   Heading,
   CardBody,
   Card,
   Stack,
 } from '@chakra-ui/react'
+import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 
 const OPEN_WEATHER_GEOCODE_API_ROUTE = 'http://api.openweathermap.org/geo/1.0/'
+const API_KEY = process.env.NEXT_PUBLIC_OPEN_WEATHER_API_KEY
+
+interface FormInputs {
+  zipCode: string
+}
 
 type LocatorProps = {
   onLocationFound: (lat: number, lon: number, name: string) => void
 }
 
 export const Locator = ({ onLocationFound }: LocatorProps) => {
-  const [zipCode, setZipCode] = useState('')
   const [location, setLocation] = useState(null)
   const theme = useTheme()
+  const {
+    handleSubmit,
+    register,
+    formState: { errors, isSubmitting },
+  } = useForm()
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    console.log(
-      'process.env.OPEN_WEATHER_API_KEY: ',
-      process.env.OPEN_WEATHER_API_KEY,
-    )
-    event.preventDefault()
-    const response = await fetch(
-      `${OPEN_WEATHER_GEOCODE_API_ROUTE}zip?zip=${zipCode}&appid=b2dda56dad052e27f04065db2c1cd201`,
-    )
-    const data = await response.json()
-    setLocation(data)
-    onLocationFound(data.lat, data.lon, data.name)
+  const onSubmit = async (data: FormInputs) => {
+    const { zipCode } = data
+    console.log(data)
+    try {
+      const response = await fetch(
+        `${OPEN_WEATHER_GEOCODE_API_ROUTE}zip?zip=${zipCode}&appid=${API_KEY}`,
+      )
+      const location = await response.json()
+      setLocation(location)
+      onLocationFound(location.lat, location.lon, location.name)
+    } catch (error) {
+      console.error('Error fetching your location: ', error)
+      setLocation(null)
+    }
   }
 
   return (
     <>
       <Box style={{ display: 'flex', justifyContent: 'center' }}>
         <form
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmit(onSubmit)}
           style={{ display: 'flex', gap: 4, flexDirection: 'column' }}
         >
           <Heading as="h4" size="xl">
             Look up your location by zip code:
           </Heading>
-          <Input
-            value={zipCode}
-            onChange={(e) => setZipCode(e.target.value)}
-            placeholder="Enter zip code"
-            style={{
-              textAlign: 'center',
-              backgroundColor: theme.colors.sunrise.sunriseSky,
-              opacity: '0.8',
-            }}
-          />
+          <FormControl isInvalid={errors.zipCode}>
+            <Input
+              id="zip"
+              placeholder="enter zip code"
+              {...register('zipCode', {
+                required: 'This is required',
+                minLength: { value: 4, message: 'Minimum length should be 5' },
+              })}
+              style={{
+                textAlign: 'center',
+                backgroundColor: theme.colors.sunrise.sunriseSky,
+                opacity: '0.8',
+              }}
+            />
+            <FormErrorMessage>
+              {errors.zipCode && errors.zipCode.message}
+            </FormErrorMessage>
+          </FormControl>
           <Button
             type="submit"
             style={{
