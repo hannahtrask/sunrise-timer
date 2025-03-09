@@ -21,6 +21,7 @@ Unsplash for the background image.
 #### Frontend
 
 Next.js 15 written in Typescript is used for the frontend.
+React Hook Form is used for input handling.
 
 - **todo find a way to implement a map of the user's location**
 
