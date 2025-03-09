@@ -1,4 +1,4 @@
-import { JACKSON_LAT, JACKSON_LON } from '@/app/constants/jackson'
+import { JACKSON_LAT, JACKSON_LON } from '@/constants/jackson'
 
 export const SUNRISE_API_ROUTE =
   'https://api.sunrise-sunset.org/json?lat=' +

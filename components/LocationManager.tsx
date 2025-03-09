@@ -5,9 +5,9 @@ import { Box } from '@chakra-ui/react'
 import { Locator } from '@/components/Locator'
 
 export const LocationManager = () => {
-  const [latitude, setLatitude] = useState<number>(null)
-  const [longitude, setLongitude] = useState<number>(null)
-  const [placeName, setPlaceName] = useState<string>(null)
+  const [latitude, setLatitude] = useState<number>(43.4799) // Jackson WY default latitude
+  const [longitude, setLongitude] = useState<number>(110.7624) // Jackson WY default longitude
+  const [placeName, setPlaceName] = useState<string>('Jackson Hole, Wyoming')
 
   const handleLocationFound = (lat: number, lon: number, name: string) => {
     setLatitude(lat)

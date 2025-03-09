@@ -20,7 +20,7 @@ Unsplash for the background image.
 
 #### Frontend
 
-Next.js is used for the frontend.
+Next.js 15 written in Typescript is used for the frontend.
 
 - **todo find a way to implement a map of the user's location**
 

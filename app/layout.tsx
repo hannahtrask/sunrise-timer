@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import React from 'react'
-import { Providers } from '@/app/providers/indesx'
+import { Providers } from '@/providers/indesx'
 
 export const metadata: Metadata = {
   title: 'Sunrise Timer :)',
