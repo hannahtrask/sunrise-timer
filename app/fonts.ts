@@ -1,9 +1,9 @@
-import { Kablammo, Noto_Sans } from 'next/font/google'
+import { Borel, Noto_Sans } from 'next/font/google'
 
-const kablamo = Kablammo({
+const borel = Borel({
   weight: '400',
   subsets: ['latin'],
-  variable: '--font-kablamo',
+  variable: '--font-borel',
 })
 
 const notoSans = Noto_Sans({
@@ -13,6 +13,6 @@ const notoSans = Noto_Sans({
 })
 
 export const fonts = {
-  kablamo,
+  borel,
   notoSans,
 }

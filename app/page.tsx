@@ -1,42 +1,37 @@
-import { Box, Link } from '@chakra-ui/react'
+import { Box, Heading, Link } from '@chakra-ui/react'
 import { LocationManager } from '@/components/LocationManager'
 
 export default async function Home() {
   return (
-    <Box
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-      }}
-    >
+    <Box style={{ height: '100vh', padding: '4rem' }}>
       <Box
         style={{
           display: 'flex',
           flexDirection: 'column',
-          gap: 32,
-        }}
-      >
-        <LocationManager />
-      </Box>
-      <Box
-        style={{
-          flexWrap: 'wrap',
+          justifyContent: 'space-around',
           alignItems: 'center',
-          justifyContent: 'center',
         }}
       >
-        <Link
-          href="https://sunrisesunset.io/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: '#fff' }}
-        >
-          This app powered by SunriseSunset.io →
-        </Link>
+        <Heading as="h2" size="2xl">
+          how much time until the sun comes up again?
+        </Heading>
       </Box>
+      <LocationManager />
+      <Link
+        href="https://sunrisesunset.io/"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          color: '#fff',
+          textAlign: 'center',
+          position: 'absolute',
+          bottom: 0,
+          right: 0,
+          padding: '1rem',
+        }}
+      >
+        This app powered by SunriseSunset.io →
+      </Link>
     </Box>
   )
 }

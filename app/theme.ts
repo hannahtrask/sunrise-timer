@@ -78,7 +78,7 @@ const theme = extendTheme({
     sunrise: sunriseColors,
   },
   fonts: {
-    heading: fonts.kablamo.style.fontFamily,
+    heading: fonts.borel.style.fontFamily,
     body: fonts.notoSans.style.fontFamily,
   },
   styles: {
@@ -87,7 +87,7 @@ const theme = extendTheme({
         backgroundImage: "url('/sapan-patel-i9Q9bc-WgfE-unsplash.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        color: sunriseColors.sunrisePurple,
+        color: sunriseColors.sunriseBlue,
         fontFamily: "'Roboto', sans-serif",
         lineHeight: '1.6',
         minHeight: '100vh',
@@ -99,7 +99,7 @@ const theme = extendTheme({
         marginBottom: '1rem',
       },
       h2: {
-        color: sunriseColors.sunrisePink,
+        color: sunriseColors.sunriseSky,
         fontSize: '2xl',
         fontWeight: 'semibold',
         marginBottom: '1rem',
@@ -111,7 +111,7 @@ const theme = extendTheme({
         marginBottom: '1rem',
       },
       h4: {
-        color: sunriseColors.sunrisePurple,
+        color: sunriseColors.sunriseSky,
       },
       p: {
         color: sunriseColors.sunrisePurple,
@@ -166,14 +166,8 @@ const theme = extendTheme({
         },
       },
     },
-    Tag: {
-      baseStyle: {
-        colorScheme: sunriseColors.sunrisePurple,
-      },
-    },
     Card: {
       baseStyle: {
-        backgroundColor: sunriseColors.sunrisePeach,
         borderColor: sunriseColors.sunrisePurple,
         borderWidth: '2px',
         borderRadius: '5px',
@@ -197,7 +191,7 @@ const theme = extendTheme({
         },
         h2: {
           fontSize: '2xl',
-          color: sunriseColors.sunrisePurple,
+          color: sunriseColors.sunriseSky,
         },
         h3: {
           fontSize: 'xl',

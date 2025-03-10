@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react'
 import {
   Box,
   Card,
-  Heading,
-  HStack,
+  CardBody,
   Spinner,
-  Tag,
+  Stack,
   Text,
+  useTheme,
 } from '@chakra-ui/react'
 
 type CountdownProps = {
@@ -26,6 +26,7 @@ export const Countdown = ({
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 })
   const [loading, setLoading] = useState<boolean>(true)
   const [formattedSunrise, setFormattedSunrise] = useState('')
+  const theme = useTheme()
 
   useEffect(() => {
     if (latitude && longitude) {
@@ -78,24 +79,58 @@ export const Countdown = ({
   }
 
   return (
-    <Card style={{ padding: '5rem', opacity: '0.9' }}>
-      <Box style={{ marginBottom: '2rem' }}>
-        <Heading as="h2" size="2xl">
-          Time until sunrise:
-        </Heading>
-        <HStack spacing={4} style={{ marginTop: '3rem' }}>
-          <Tag size="lg" key={1} variant="solid">
-            {String(timeLeft.hours).padStart(2, '0')} hours{' '}
-          </Tag>
-          <Tag size="lg" key={2} variant="solid">
-            {String(timeLeft.minutes).padStart(2, '0')} minutes{' '}
-          </Tag>
-          <Tag size="lg" key={3} variant="solid">
-            {String(timeLeft.seconds).padStart(2, '0')} seconds
-          </Tag>
-        </HStack>
+    <Card
+      style={{
+        borderRadius: '5px',
+        padding: '2rem',
+        backgroundColor: theme.colors.sunrise.sunriseSky,
+        opacity: 0.9,
+        height: '50vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <Box
+        style={{
+          display: 'flex',
+          gap: 20,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Card maxW="sm">
+          <CardBody>
+            <Stack mt="6" spacing="3">
+              <Text fontSize="2xl">
+                {String(timeLeft.hours).padStart(2, '0')}
+              </Text>
+              <Text>HOURS</Text>
+            </Stack>
+          </CardBody>
+        </Card>
+        <Card maxW="sm">
+          <CardBody>
+            <Stack mt="6" spacing="3">
+              <Text fontSize="2xl">
+                {String(timeLeft.minutes).padStart(2, '0')}
+              </Text>
+              <Text>MINUTES</Text>
+            </Stack>
+          </CardBody>
+        </Card>
+        <Card maxW="sm">
+          <CardBody>
+            <Stack mt="6" spacing="3">
+              <Text fontSize="2xl">
+                {String(timeLeft.seconds).padStart(2, '0')}
+              </Text>
+              <Text>SECONDS</Text>
+            </Stack>
+          </CardBody>
+        </Card>
       </Box>
-      <Text fontSize="lg">
+      <Text fontSize="lg" style={{ fontWeight: 'bold', marginTop: '6rem' }}>
         Tomorrow&apos;s sunrise in {placeName} is at {formattedSunrise}.
       </Text>
     </Card>
