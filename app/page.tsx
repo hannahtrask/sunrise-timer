@@ -3,7 +3,15 @@ import { LocationManager } from '@/components/LocationManager'
 
 export default async function Home() {
   return (
-    <Box style={{ height: '100vh', padding: '4rem' }}>
+    <Box
+      style={{
+        height: '100vh',
+        padding: '4rem',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-around',
+      }}
+    >
       <Box
         style={{
           display: 'flex',

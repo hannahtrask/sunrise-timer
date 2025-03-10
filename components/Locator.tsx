@@ -36,7 +36,6 @@ export const Locator = ({ onLocationFound }: LocatorProps) => {
         `${OPEN_WEATHER_GEOCODE_API_ROUTE}zip?zip=${zipCode}&appid=${API_KEY}`,
       )
       const location = await response.json()
-      console.log('Location: ', location)
       onLocationFound(location.lat, location.lon, location.name)
     } catch (error) {
       console.error('Error fetching your location: ', error)

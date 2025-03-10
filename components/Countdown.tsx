@@ -79,14 +79,10 @@ export const Countdown = ({
   }
 
   return (
-    <Card
+    <Box
       style={{
-        borderRadius: '5px',
-        padding: '2rem',
-        backgroundColor: theme.colors.sunrise.sunriseSky,
-        opacity: 0.9,
-        height: '50vh',
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
       }}
@@ -96,10 +92,11 @@ export const Countdown = ({
           display: 'flex',
           gap: 20,
           flexDirection: 'row',
-          justifyContent: 'space-between',
+          justifyContent: 'center',
+          opacity: 0.9,
         }}
       >
-        <Card maxW="sm">
+        <Card maxW="sm" style={{ width: '10rem', textAlign: 'center' }}>
           <CardBody>
             <Stack mt="6" spacing="3">
               <Text fontSize="2xl">
@@ -109,7 +106,7 @@ export const Countdown = ({
             </Stack>
           </CardBody>
         </Card>
-        <Card maxW="sm">
+        <Card maxW="sm" style={{ width: '10rem', textAlign: 'center' }}>
           <CardBody>
             <Stack mt="6" spacing="3">
               <Text fontSize="2xl">
@@ -119,7 +116,7 @@ export const Countdown = ({
             </Stack>
           </CardBody>
         </Card>
-        <Card maxW="sm">
+        <Card maxW="sm" style={{ width: '10rem', textAlign: 'center' }}>
           <CardBody>
             <Stack mt="6" spacing="3">
               <Text fontSize="2xl">
@@ -130,9 +127,16 @@ export const Countdown = ({
           </CardBody>
         </Card>
       </Box>
-      <Text fontSize="lg" style={{ fontWeight: 'bold', marginTop: '6rem' }}>
+      <Text
+        fontSize="lg"
+        style={{
+          fontWeight: 'bold',
+          marginTop: '6rem',
+          color: theme.colors.sunrise.sunriseSky,
+        }}
+      >
         Tomorrow&apos;s sunrise in {placeName} is at {formattedSunrise}.
       </Text>
-    </Card>
+    </Box>
   )
 }

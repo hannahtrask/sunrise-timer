@@ -85,8 +85,8 @@ const theme = extendTheme({
     global: {
       'html, body': {
         backgroundImage: "url('/sapan-patel-i9Q9bc-WgfE-unsplash.jpg')",
+        backgroundPosition: 'bottom center',
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
         color: sunriseColors.sunriseBlue,
         fontFamily: "'Roboto', sans-serif",
         lineHeight: '1.6',
