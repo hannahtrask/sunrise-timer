@@ -6,6 +6,8 @@ App will be running at [http://localhost:3000](http://localhost:3000) in your br
 
 To use to coordinate lookup to find the sunrise time for your location, you'll need to get an API key fromm [https://openweathermap.org/api/geocoding-api](https://openweathermap.org/api/geocoding-api) and add it to a `.env.local` file in the root of the project.
 
+<img width="1505" alt="Screenshot 2025-03-11 at 1 18 12 PM" src="https://github.com/user-attachments/assets/a3f30a21-7171-49cf-bb40-5d8b715acda6" />
+
 ## The Stack
 
 #### API
